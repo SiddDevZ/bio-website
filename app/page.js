@@ -85,7 +85,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen py-8 relative overflow-hidden">
+    <main className="min-h-screen py-4 sm:py-8 relative overflow-hidden">
       <AnimatePresence>
         {!isAudioInitialized && (
           <AudioOverlay onInitialize={handleAudioInitialize} />
@@ -93,9 +93,9 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Main content container */}
-      <div className="max-w-2xl mx-auto px-4 relative z-10">
+      <div className="max-w-2xl mx-auto px-3 sm:px-4 relative z-10">
         <motion.div
-          className="glass-card p-8 rounded-2xl overflow-hidden"
+          className="glass-card p-5 sm:p-8 rounded-2xl overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -104,7 +104,7 @@ export default function Home() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
             {/* Profile Section */}
             <motion.div 
@@ -114,22 +114,22 @@ export default function Home() {
                 transform: `translateY(${scrollY * 0.05}px)`,
               }}
             >
-              <div className="flex items-center flex-col mb-4">
-                <div className="relative mb-3">
+              <div className="flex items-center flex-col mb-3 sm:mb-4">
+                <div className="relative mb-2 sm:mb-3">
                   <div className="absolute -inset-1 bg-gradient-to-r from-white to-gray-400 rounded-full opacity-20 blur-md"></div>
                   <div className="relative">
                     <Image
                       src="/profile.jpg" 
                       alt="fein.bio" 
-                      width={90} 
-                      height={90} 
-                      className="rounded-full border border-white/10 bg-[#111] relative z-10 avatar-glow"
+                      width={75} 
+                      height={75}
+                      className="rounded-full border border-white/10 bg-[#111] relative z-10 avatar-glow sm:w-[90px] sm:h-[90px]"
                     />
                   </div>
                 </div>
                 
-                <h1 className="text-2xl font-bold mb-1 gradient-text">fein.bio</h1>
-                <div className="mb-3 text-sm text-white/80">
+                <h1 className="text-xl sm:text-2xl font-bold mb-1 gradient-text">fein.bio</h1>
+                <div className="mb-2 sm:mb-3 text-xs sm:text-sm text-white/80">
                   <TypingAnimation 
                     strings={[
                       "Darkness is shadow", 
@@ -141,38 +141,62 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="flex flex-wrap justify-center gap-3 mb-1">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-1">
                 <motion.a
                   href="https://discord.com/users/1354296744199979018"
-                  className="social-icon bg-white/10 p-3 rounded-full"
+                  className="social-icon bg-white/10 p-2 sm:p-3 rounded-full"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 500, 
+                    damping: 15, 
+                    mass: 0.5 
+                  }}
                 >
-                  <FaDiscord size={20} className="text-[#5865F2]" />
+                  <FaDiscord size={18} className="sm:text-[20px]" />
                 </motion.a>
                 <motion.a
                   href="https://fbi.lc/"
-                  className="social-icon bg-white/10 p-3 rounded-full"
+                  className="social-icon bg-white/10 p-2 sm:p-3 rounded-full"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 500, 
+                    damping: 15, 
+                    mass: 0.5 
+                  }}
                 >
-                  <GlobeIcon size={20} className="text-white" />
+                  <GlobeIcon size={18} className="sm:text-[20px]" />
                 </motion.a>
                 <motion.a
                   href="https://doxed.rest/"
-                  className="social-icon bg-white/10 p-3 rounded-full"
+                  className="social-icon bg-white/10 p-2 sm:p-3 rounded-full"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 500, 
+                    damping: 15, 
+                    mass: 0.5 
+                  }}
                 >
-                  <GlobeIcon size={20} className="text-white" />
+                  <GlobeIcon size={18} className="sm:text-[20px]" />
                 </motion.a>
                 <motion.a
                   href="https://github.com/later-now"
-                  className="social-icon bg-white/10 p-3 rounded-full"
+                  className="social-icon bg-white/10 p-2 sm:p-3 rounded-full"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 500, 
+                    damping: 15, 
+                    mass: 0.5 
+                  }}
                 >
-                  <FaGithub size={20} className="text-white" />
+                  <FaGithub size={18} className="sm:text-[20px]" />
                 </motion.a>
               </div>
             </motion.div>
@@ -191,9 +215,9 @@ export default function Home() {
             </motion.div>
 
             {/* Social Links Section */}
-            <motion.div className="space-y-3" variants={itemVariants}>
-              <h2 className="text-sm uppercase text-white/60 font-medium tracking-wider mb-2">Links</h2>
-              <div className="grid grid-cols-1 gap-3">
+            <motion.div className="space-y-2 sm:space-y-3" variants={itemVariants}>
+              <h2 className="text-xs sm:text-sm uppercase text-white/60 font-medium tracking-wider mb-1 sm:mb-2 px-1">Links</h2>
+              <div className="grid grid-cols-1 gap-2 sm:gap-3">
                 <SocialLink 
                   href="https://anonymous.rip/" 
                   icon={GlobeIcon} 
@@ -234,9 +258,9 @@ export default function Home() {
             </motion.div>
 
             {/* Projects Section */}
-            <motion.div className="space-y-3" variants={itemVariants}>
-              <h2 className="text-sm uppercase text-white/60 font-medium tracking-wider mb-2">Projects</h2>
-              <div className="grid grid-cols-1 gap-3">
+            <motion.div className="space-y-2 sm:space-y-3" variants={itemVariants}>
+              <h2 className="text-xs sm:text-sm uppercase text-white/60 font-medium tracking-wider mb-1 sm:mb-2 px-1">Projects</h2>
+              <div className="grid grid-cols-1 gap-2 sm:gap-3">
                 <ContentCard 
                   title="Portfolio" 
                   icon={FaCode} 
@@ -254,7 +278,7 @@ export default function Home() {
             
             {/* Footer */}
             <motion.div 
-              className="text-center text-xs text-white/40 pt-4"
+              className="text-center text-xs text-white/40 pt-2 sm:pt-4"
               variants={itemVariants}
             >
               © {new Date().getFullYear()} fein.bio • All rights reserved

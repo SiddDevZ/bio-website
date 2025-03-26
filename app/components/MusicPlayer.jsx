@@ -181,24 +181,24 @@ export default function MusicPlayer({ isInitialized = false }) {
   
   return (
     <motion.div 
-      className="glass-card p-5 w-full"
+      className="glass-card p-4 sm:p-5 w-full"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.1 }}
     >
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
         <div className="flex items-center">
-          <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-3 pulse">
+          <div className="min-w-10 min-h-10 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-3 pulse flex-shrink-0">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 18V6L21 12L9 18Z" fill="white"/>
             </svg>
           </div>
           <div>
-            <h3 className="font-medium text-white">{songTitle || 'Loading...'}</h3>
+            <h3 className="font-medium text-white text-sm sm:text-base truncate max-w-[160px] sm:max-w-[240px]">{songTitle || 'Loading...'}</h3>
             <p className="text-xs text-gray-400">{isPlaying ? 'Now Playing' : 'Paused'}</p>
           </div>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 ml-auto">
           <button onClick={toggleMute} className="text-white hover:text-gray-300 transition-colors">
             {isMuted ? <FaVolumeMute size={16} /> : <FaVolumeUp size={16} />}
           </button>
@@ -209,7 +209,7 @@ export default function MusicPlayer({ isInitialized = false }) {
             step="0.01"
             value={volume}
             onChange={handleVolumeChange}
-            className="w-16 h-1 rounded-lg appearance-none bg-white/20 cursor-pointer"
+            className="w-14 sm:w-16 h-1 rounded-lg appearance-none bg-white/20 cursor-pointer"
           />
         </div>
       </div>
@@ -246,7 +246,7 @@ export default function MusicPlayer({ isInitialized = false }) {
           <FaBackward size={14} />
         </motion.button>
         <motion.button 
-          className="bg-white text-black hover:bg-opacity-90 p-3 rounded-full transition-all"
+          className="bg-white text-black hover:bg-opacity-90 p-3 rounded-full transition-all flex-shrink-0"
           onClick={togglePlay}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
