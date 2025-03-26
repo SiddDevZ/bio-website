@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "fein.bio",
-  description: "Personal bio page of fein.bio",
+  title: "Betray",
+  description: "Personal bio page of Betray",
   icons: {
     icon: '/favicon.ico',
   },
