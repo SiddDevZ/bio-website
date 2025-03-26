@@ -9,7 +9,9 @@ import {
   FaMoon,
   FaHome,
   FaCode,
-  FaExternalLinkAlt
+  FaExternalLinkAlt,
+  FaTwitter,
+  FaEnvelope
 } from "react-icons/fa";
 
 import TypingAnimation from "./components/TypingAnimation";
@@ -128,7 +130,7 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <h1 className="text-xl sm:text-2xl font-bold mb-1 gradient-text">fein.bio</h1>
+                <h1 className="text-xl sm:text-2xl font-bold mb-1 gradient-text">Betray</h1>
                 <div className="mb-2 sm:mb-3 text-xs sm:text-sm text-white/80">
                   <TypingAnimation 
                     strings={[
@@ -157,7 +159,7 @@ export default function Home() {
                   <FaDiscord size={18} className="sm:text-[20px]" />
                 </motion.a>
                 <motion.a
-                  href="https://fbi.lc/"
+                  href="https://twitter.com/betraynow"
                   className="social-icon bg-white/10 p-2 sm:p-3 rounded-full"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -168,21 +170,7 @@ export default function Home() {
                     mass: 0.5 
                   }}
                 >
-                  <GlobeIcon size={18} className="sm:text-[20px]" />
-                </motion.a>
-                <motion.a
-                  href="https://doxed.rest/"
-                  className="social-icon bg-white/10 p-2 sm:p-3 rounded-full"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ 
-                    type: "spring", 
-                    stiffness: 500, 
-                    damping: 15, 
-                    mass: 0.5 
-                  }}
-                >
-                  <GlobeIcon size={18} className="sm:text-[20px]" />
+                  <FaTwitter size={18} className="sm:text-[20px]" />
                 </motion.a>
                 <motion.a
                   href="https://github.com/later-now"
@@ -197,6 +185,20 @@ export default function Home() {
                   }}
                 >
                   <FaGithub size={18} className="sm:text-[20px]" />
+                </motion.a>
+                <motion.a
+                  href="mailto:scar@haven.su"
+                  className="social-icon bg-white/10 p-2 sm:p-3 rounded-full"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 500, 
+                    damping: 15, 
+                    mass: 0.5 
+                  }}
+                >
+                  <FaEnvelope size={18} className="sm:text-[20px]" />
                 </motion.a>
               </div>
             </motion.div>
@@ -218,6 +220,18 @@ export default function Home() {
             <motion.div className="space-y-2 sm:space-y-3" variants={itemVariants}>
               <h2 className="text-xs sm:text-sm uppercase text-white/60 font-medium tracking-wider mb-1 sm:mb-2 px-1">Links</h2>
               <div className="grid grid-cols-1 gap-2 sm:gap-3">
+                <SocialLink 
+                  href="https://fbi.lc/" 
+                  icon={GlobeIcon} 
+                  label="fbi.lc" 
+                  iconColor="text-white"
+                />
+                <SocialLink 
+                  href="https://doxed.rest/" 
+                  icon={GlobeIcon} 
+                  label="doxed.rest" 
+                  iconColor="text-white"
+                />
                 <SocialLink 
                   href="https://anonymous.rip/" 
                   icon={GlobeIcon} 
@@ -252,6 +266,12 @@ export default function Home() {
                   href="https://homicid.es/" 
                   icon={FaHome} 
                   label="homicid.es" 
+                  iconColor="text-white"
+                />
+                <SocialLink 
+                  href="mailto:scar@haven.su" 
+                  icon={FaEnvelope} 
+                  label="scar@haven.su" 
                   iconColor="text-white"
                 />
               </div>

@@ -9,19 +9,13 @@ export default function ContentCard({ title, description, icon: Icon, href, clas
       target="_blank"
       rel="noopener noreferrer"
       className={`glass-card p-3 sm:p-5 rounded-xl flex items-center group ${className}`}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ 
-        type: "spring", 
-        stiffness: 400, 
-        damping: 17,
-        mass: 0.5 
-      }}
+      whileHover={{ scaleX: 1.03, transition: { duration: 0.15 } }}
+      whileTap={{ scaleX: 0.98 }}
     >
       <div className="flex items-center justify-between w-full">
         <div className="flex items-center min-w-0">
           {Icon && (
-            <div className="mr-3 sm:mr-4 text-white bg-white/[0.08] p-2 sm:p-3 rounded-xl group-hover:bg-white/10 transition-all duration-150 ease-out flex-shrink-0">
+            <div className="mr-3 sm:mr-4 text-white bg-white/[0.08] p-2 sm:p-3 rounded-xl group-hover:bg-white/10 transition-all duration-250 ease-out flex-shrink-0">
               <Icon size={16} className="sm:text-[20px]" />
             </div>
           )}
@@ -32,7 +26,7 @@ export default function ContentCard({ title, description, icon: Icon, href, clas
             )}
           </div>
         </div>
-        <div className="text-white/30 group-hover:text-white/40 transition-all duration-150 ease-out transform group-hover:translate-x-1 flex-shrink-0 ml-2">
+        <div className="text-white/30 group-hover:text-white/40 transition-all duration-250 ease-out transform group-hover:translate-x-1 flex-shrink-0 ml-2">
           <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
